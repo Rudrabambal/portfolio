@@ -2,7 +2,7 @@
 
 A sleek, premium, and fully responsive developer portfolio website built using **Next.js**, **Tailwind CSS**, and **Framer Motion**. It features interactive canvas animations, modular section designs, and contact form integration.
 
-🔗 **Live Link:** [https://portfolio-lj1i-a99gxhhvd-rudrabambal912-6901s-projects.vercel.app](https://portfolio-lj1i-a99gxhhvd-rudrabambal912-6901s-projects.vercel.app)
+🔗 **Live Link:** https://portfolio-lj1i.vercel.app/ 
 
 ---
 
