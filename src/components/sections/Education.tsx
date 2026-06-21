@@ -73,7 +73,7 @@ export default function Education() {
                   <div className={`w-3 h-3 rounded-full ${edu.dotColor} shadow-[0_0_12px_currentColor]`} />
                 </div>
 
-                <div className="flex-1 glass-card p-6 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-6 hover:border-white/20 transition-all duration-300 bg-black/40 backdrop-blur-xl">
+                <div className="flex-1 glass-card p-6 rounded-2xl flex flex-col md:flex-row items-start md:items-center gap-6 hover:border-primary/30 transition-all duration-300 backdrop-blur-xl">
                   
                   {/* Icon Box */}
                   <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">

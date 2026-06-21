@@ -69,7 +69,7 @@ export default function Experience() {
             </div>
 
             {/* Right Column: Details */}
-            <div className="space-y-8 bg-black/20 rounded-2xl p-6 md:p-8 border border-white/5 backdrop-blur-sm">
+            <div className="space-y-8 glass-card rounded-2xl p-6 md:p-8 border border-white/5 backdrop-blur-sm">
               <div>
                 <h4 className="text-lg font-semibold text-white mb-5 flex items-center gap-2">
                   <ArrowRight size={18} className="text-primary" /> Core Responsibilities

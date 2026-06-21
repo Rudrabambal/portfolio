@@ -3,35 +3,71 @@
 @tailwind utilities;
 
 :root {
-  --background: #1c1c1c;
-  --foreground: #f4ebd8;
+  --background: #121416;
+  --foreground: #FFFFE3;
+  --text-primary: #6D8196;
+  --text-accent: #CBCBCB;
+}
+
+.light {
+  --background: #F4F6F8;
+  --foreground: #121416;
+  --text-primary: #4A607A;
+  --text-accent: #4A4A4A;
+}
+
+/* Prevent white flash before canvas initializes */
+html {
+  background: #121416;
+}
+
+.light html {
+  background: #F4F6F8;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: transparent;
   overflow-x: hidden;
+  transition: color 0.4s ease;
 }
 
+/* The Starfield canvas handles all background rendering.
+   bg-animated-gradient is transparent — canvas owns the bg. */
 .bg-animated-gradient {
-  background: linear-gradient(-45deg, #1c1c1c, #2a2a2a, #1c1c1c, #333333);
-  background-size: 400% 400%;
-  animation: gradient-x 15s ease infinite;
+  background: transparent;
+}
+
+.light body {
+  background: transparent;
 }
 
 /* Glassmorphism utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(109, 129, 150, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(109, 129, 150, 0.15);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.light .glass {
+  background: rgba(109, 129, 150, 0.08);
+  border: 1px solid rgba(109, 129, 150, 0.25);
 }
 
 .glass-card {
-  background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+  background: linear-gradient(145deg, rgba(74, 74, 74, 0.2) 0%, rgba(18, 20, 22, 0.6) 100%);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(109, 129, 150, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light .glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7) 0%, rgba(240, 242, 245, 0.8) 100%);
+  border: 1px solid rgba(109, 129, 150, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(109, 129, 150, 0.1);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -47,4 +83,18 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Light Mode Utility Overrides */
+.light .text-white:not(.bg-primary):not(.text-primary) {
+  color: var(--foreground) !important;
+}
+.light .text-gray-300:not(.bg-primary) {
+  color: var(--text-accent) !important;
+}
+.light .text-gray-400:not(.bg-primary) {
+  color: var(--text-accent) !important;
+}
+.light .text-gray-500 {
+  color: var(--text-accent) !important;
 }

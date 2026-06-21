@@ -26,9 +26,9 @@ const categories = ["All", "Frontend", "Backend", "AI/ML", "Tools"];
 
 const proficiencyColor: Record<string, string> = {
   Advanced: "text-primary",
-  Proficient: "text-accent",
-  Intermediate: "text-cyan-400",
-  Beginner: "text-gray-400",
+  Proficient: "text-white",
+  Intermediate: "text-accent",
+  Beginner: "text-gray-500",
 };
 
 function SkillCard({ skill }: { skill: typeof skills[0] }) {
@@ -48,14 +48,14 @@ function SkillCard({ skill }: { skill: typeof skills[0] }) {
       >
         {/* Front */}
         <div
-          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-3 p-4 text-center border border-white/8 hover:border-white/20 transition-colors"
-          style={{ backfaceVisibility: "hidden", background: "rgba(20,24,40,0.85)" }}
+          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-3 p-4 text-center border border-white/10 hover:border-primary/50 transition-colors"
+          style={{ backfaceVisibility: "hidden", background: "rgba(18, 20, 22, 0.75)", backdropFilter: "blur(10px)" }}
         >
           <div className="text-4xl">{skill.icon}</div>
           <div className="text-sm font-semibold text-white leading-tight">{skill.name}</div>
           <span
             className="px-3 py-0.5 rounded-full text-[10px] font-bold tracking-wide"
-            style={{ background: "rgba(99,102,241,0.25)", color: "#a5b4fc" }}
+            style={{ background: "rgba(109, 129, 150, 0.15)", color: "#CBCBCB" }}
           >
             {skill.category}
           </span>
@@ -64,11 +64,12 @@ function SkillCard({ skill }: { skill: typeof skills[0] }) {
 
         {/* Back */}
         <div
-          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-3 p-5 text-center border border-white/10"
+          className="absolute inset-0 rounded-2xl flex flex-col items-center justify-center gap-3 p-5 text-center border border-white/15"
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
-            background: "rgba(20,24,40,0.95)",
+            background: "rgba(18, 20, 22, 0.95)",
+            backdropFilter: "blur(15px)"
           }}
         >
           <div className="text-[10px] uppercase tracking-widest text-gray-500 font-semibold">Proficiency</div>

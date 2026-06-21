@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#1c1c1c", // Dark Grey
-        foreground: "#f4ebd8", // Light Beige text
-        primary: "#d5bdaf", // Warm Beige
-        secondary: "#4a4a4a", // Medium Grey
-        accent: "#e3d5ca", // Lighter Beige
-        black: "#111111",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: "var(--text-primary)",
+        secondary: "#4A4A4A", // Charcoal Black
+        accent: "var(--text-accent)",
+        black: "#0C0D0E",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

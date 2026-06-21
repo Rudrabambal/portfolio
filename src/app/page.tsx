@@ -11,22 +11,25 @@ import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-animated-gradient text-white selection:bg-primary/30 selection:text-white">
+    <main className="min-h-screen relative text-white selection:bg-primary/30 selection:text-white">
       <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Certifications />
-      <Achievements />
-      <Contact />
-      
-      <footer className="py-8 text-center text-gray-500 text-sm border-t border-white/5 mt-12">
+      <div className="relative z-10">
+        <Hero />
+        <About />
+        <Education />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <Achievements />
+        <Contact />
+      </div>
+
+      <footer className="relative z-10 py-8 text-center text-gray-500 text-sm border-t border-white/5 mt-12">
         <p>© {new Date().getFullYear()} Rudra Bambal. All rights reserved.</p>
-        <p className="mt-2">Designed with ❤️ & AI</p>
+        <p className="mt-2">Made with ❤️ by Rudra</p>
       </footer>
     </main>
   );
 }
+

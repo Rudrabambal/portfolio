@@ -7,6 +7,32 @@ import { Menu, X, Terminal, Moon, Sun } from "lucide-react";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    setMounted(true);
+    const localTheme = localStorage.getItem("theme") || "dark";
+    setTheme(localTheme);
+    if (localTheme === "light") {
+      document.documentElement.classList.add("light");
+    } else {
+      document.documentElement.classList.remove("light");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    if (nextTheme === "light") {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("theme", "dark");
+    }
+    window.dispatchEvent(new Event("themechange"));
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,9 +83,11 @@ export default function Navbar() {
           <motion.button
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
+            onClick={toggleTheme}
             className="p-2 rounded-full glass hover:bg-white/10 transition-colors text-white"
+            aria-label="Toggle theme"
           >
-            <Moon size={18} />
+            {mounted && theme === "light" ? <Moon size={18} className="text-primary" /> : <Sun size={18} className="text-primary" />}
           </motion.button>
         </nav>
 
